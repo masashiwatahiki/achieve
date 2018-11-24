@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sample3</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>例コード</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <header>
+    <ul>
+      <li><p>Rails Blog Sample</p></li>
+      <li>
+        <%= link_to '新しい記事を書く', new_blog_path , class: 'btn btn-default' %>
+      </li>
+    </ul>
+  </header>
 
-  <body>
-    <%= yield %>
-  </body>
+<%= yield %>
+
+  <footer>
+    <p>© Watahiki Masashi</p>
+  </footer>
+
+</body>
 </html>

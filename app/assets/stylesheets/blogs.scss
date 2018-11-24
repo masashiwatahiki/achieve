@@ -1,3 +1,21 @@
 // Place all the styles related to the blogs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+new-blog-link {
+  font-size: 30px;
+  color :black;
+}
+
+ html {
+   width: 100%;
+ }
+ .introduction h1{
+   text-align: center;
+   font-size: 5rem;
+ }
+ .introduction p{
+   display: block;
+ }
+ .introduction p img{
+   margin-right: 33rem;
+ }
