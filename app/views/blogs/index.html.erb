@@ -8,6 +8,9 @@
   <h1>
     Bootstrapを用いたブログサンプル
   </h1>
+  <% if logged_in? %>
+  <%= link_to '新しい記事を書く', new_blog_path , class: 'btn btn-default' %>
+  <% end %>
 </div>
   <div class="row">
     <% @blogs.each do |blog| %>
@@ -15,11 +18,13 @@
         <h2><%= blog.title %></h2>
         <p><%= blog.content %></p>
         <p><%= blog.created_at %></p>
+        <% if logged_in? %>
         <div class="blog-links">
           <%= link_to 'Show', blog, class: 'btn btn-default' %>
           <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
           <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </div>
+        <% end %>
       </div>
     <% end %>
   </div>
