@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
     if params[:back]
       @blog = current_user.blogs.build(blog_params)
     else
-      @blog = current_user.blogs.build(blog_params)
+      @blog = current_user.blogs.build
     end
   end
 
