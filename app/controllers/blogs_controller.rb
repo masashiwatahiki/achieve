@@ -17,9 +17,9 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     if params[:back]
-      @blog = Blog.new(blog_params)
+      @blog = current_user.blogs.build(blog_params)
     else
-      @blog = Blog.new
+      @blog = current_user.blogs.build(blog_params)
     end
   end
 
