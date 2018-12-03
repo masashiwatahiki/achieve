@@ -9,7 +9,12 @@ class ApplicationController < ActionController::Base
       redirect_to("/sessions/new")
     end
   end
-
+  def other_person
+    if @blog.user_id == current_user.id
+      flash[:notice] = "他の人の投稿です"
+      redirect_to("/blogs")
+    end
+  end
   protect_from_forgery with: :exception
   include SessionsHelper
 end
