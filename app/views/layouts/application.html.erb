@@ -12,6 +12,7 @@
       Rails Blog Sample
     </div>
     <div class="login">
+      <%= link_to 'Contact', new_contact_path, class: 'btn btn-default' %>
       <% flash.each do |key, value| %>
         <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
