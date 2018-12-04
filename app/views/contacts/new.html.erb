@@ -1,0 +1,14 @@
+<h1>New Contact</h1>
+<%= notice %>
+<%= form_with(model: Contact.new) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+
+  <%= form.label :content %>
+  <%= form.text_field :content %><br>
+
+  <%= form.submit %>
+<% end %>
