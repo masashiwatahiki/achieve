@@ -18,9 +18,9 @@
         <h2><%= blog.title %></h2>
         <p><%= blog.content %></p>
         <p><%= blog.created_at %></p>
-        <% if logged_in? %>
         <div class="blog-links">
           <%= link_to 'Show', blog, class: 'btn btn-default' %>
+          <% if current_user.id == blog.user_id  %>
           <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
           <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         </div>

@@ -3,3 +3,11 @@
 <p>メールアドレス: <%= @user.email %></p>
 
 <%= link_to '新しい記事を書く', new_blog_path , class: 'btn btn-default' %><br>
+
+<h1>お気に入り記事一覧</h1>
+<% @favorites.each do |favorite| %>
+  <h2><%= favorite.title %></h2>
+  <p><%= favorite.content %></p>
+  <p><%= favorite.user.name + "さんの投稿" %></p>
+  <p><%= favorite.created_at %></p>
+<%end%>

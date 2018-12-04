@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     end
   end
   def other_person
-    if @blog.user_id == current_user.id
+    if  @blog.user_id != current_user.id
       flash[:notice] = "他の人の投稿です"
       redirect_to("/blogs")
     end
