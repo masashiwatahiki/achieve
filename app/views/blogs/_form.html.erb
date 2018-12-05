@@ -21,10 +21,10 @@
     <%= form.text_field :content, id: :blog_content %>
   </div>
 
-  <div class="image_upload">
-    <%= form.label :image %>
-    <%= image_tag(@blog.image.url) if @blog.image.url %>
-    <%= form.file_field :image %>
+  <div class="field" align="center">
+      <%= form.label :image %>
+      <%= image_tag(@blog.image.url) if @blog.image.url %>
+      <%= form.file_field :image %>
   </div>
 
   <div class="actions">
