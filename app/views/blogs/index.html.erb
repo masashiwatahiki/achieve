@@ -10,6 +10,7 @@
   </h1>
   <% if logged_in? %>
   <%= link_to '新しい記事を書く', new_blog_path , class: 'btn btn-default' %>
+  <%= link_to "お気に入り一覧", favorite_index_path(current_user.id) ,class:'btn btn-info'%>
   <% end %>
 </div>
   <div class="row">
@@ -17,6 +18,7 @@
       <div class="col-xs-12 col-md-6 blog-panel">
         <h2><%= blog.title %></h2>
         <p><%= blog.content %></p>
+        <p><%= blog.user.name + "さんの投稿" %></p>
         <% unless blog.image.url.nil? %>
         <p> 画像があります </p>
         <% end %>
